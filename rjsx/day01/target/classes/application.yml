@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+# server.servlet.context-path: /day03 配置项目名称，默认/
+
+
+
+spring:
+
+  datasource:
+    druid:
+      username: root
+      password: 123456
+      url: jdbc:mysql://localhost:3306/jxrj?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initialSize: 10
+      maxActive: 20
+      minIdle: 10
+
+
+
+mybatis-plus:
+#  mapper-locations: classpath*:/mapper/**/*.xml
+#  config-location: classpath:mybatis-config.xml
+  configuration:
+    cache-enabled: true
+    jdbc-type-for-null: null
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.zte.*.model
+
+# plus分页配置
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

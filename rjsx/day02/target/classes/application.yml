@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    druid:
+      username: root
+      password: 201212
+      url: jdbc:mysql://localhost:3306/jxrj?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initialSize: 10
+      maxActive: 20
+      minIdle: 10
+
+
+
+mybatis-plus:
+  configuration:
+    cache-enabled: true
+    jdbc-type-for-null: null
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.zte.*.model
+
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
